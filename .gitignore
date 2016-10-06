@@ -1,3 +1,4 @@
+# Visual Studio Core
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
