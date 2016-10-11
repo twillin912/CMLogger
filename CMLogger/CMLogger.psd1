@@ -12,7 +12,7 @@
 RootModule = 'CMLogger.psm1'
 
 # Version number of this module.
-ModuleVersion = '1.0.0.0'
+ModuleVersion = '0.0.3'
 
 # ID used to uniquely identify this module
 GUID = 'bd4390dc-a8ad-4bce-8d69-f53ccf8e4163'
@@ -27,12 +27,10 @@ Author = 'Trent Willingham'
 Copyright = '(c) 2016 Trent Willingham. All rights reserved.'
 
 # Description of the functionality provided by this module
-Description = 'This module contains functions to create CMTrace compatible log files.
-Change Log:
-v1.0.0 - Initial Release'
+Description = 'This module contains functions to create CMTrace compatible log files.'
 
 # Minimum version of the Windows PowerShell engine required by this module
-PowerShellVersion = '4.0'
+PowerShellVersion = '3.0'
 
 # Name of the Windows PowerShell host required by this module
 # PowerShellHostName = ''
@@ -95,4 +93,18 @@ AliasesToExport = @()
 # DefaultCommandPrefix = ''
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

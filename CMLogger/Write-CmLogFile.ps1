@@ -29,12 +29,11 @@ Function Write-CmLogFile {
     .NOTES
         Author: Trent Willingham
         Check out my other scripts and projects @ https://github.com/twillin912
-
-        Change Log
-        v1.00   2016-08-09   Initial Release
 	#>
+
 	#Requires -Version 3.0
 	[CmdletBinding()]
+
 	Param (
 		[Parameter(Mandatory=$true, Position=0)]
 		[string]$LogFile,
@@ -49,8 +48,8 @@ Function Write-CmLogFile {
 
 		[Parameter()]
 		[switch]$Clobber
-
 	) # /Param
+
 	Begin {
 		If ( $MyInvocation.ScriptName ) {
 			$RunningContext = "$($MyInvocation.ScriptName | Split-Path -Leaf):$($MyInvocation.ScriptLineNumber)"
@@ -61,7 +60,7 @@ Function Write-CmLogFile {
 		If ( -not ( $Global:TimeZoneOffset ) ) {
 			$Global:TimeZoneOffset = (Get-WmiObject -Query "SELECT Bias FROM Win32_TimeZone").Bias
 		}
-	}
+	} # /Begin
 
 	Process {
 		Switch ( $LogLevel ) {

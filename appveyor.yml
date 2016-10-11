@@ -1,5 +1,3 @@
-# See http://www.appveyor.com/docs/appveyor-yml for many more options
-
 #Publish to PowerShell Gallery with this key
 environment:
   NuGetApiKey:
@@ -8,13 +6,19 @@ environment:
 # Allow WMF5 (i.e. PowerShellGallery functionality)
 os: WMF 5
 
-# Skip on updates to the readme.
-# We can force this by adding [skip ci] or [ci skip] anywhere in commit message
+install:
+  - ps: Get-PackageProvider -Name NuGet -ForceBootstrap
+  - ps: Install-Module Pester -MinimumVersion '3.4.0' -force
+  - ps: Install-Module Psake, PSDeploy, BuildHelpers, PlatyPS, PSScriptAnalyzer -force
+  - ps: Import-Module Psake, BuildHelpers, PlatyPS, PSDeploy, Pester -force
+
 skip_commits:
-  message: /updated README.*|update README.*s/
+  message: /updated readme.*|update readme.*s/
 
 build: false
 
-#Kick off the CI/CD pipeline
+#before_test:
+#  - ps: . .\Build.ps1
+
 test_script:
-- ps: . .\build.ps1
+  - ps: Invoke-psake .\Build.Psake.ps1

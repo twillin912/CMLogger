@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<helpItems schema="maml">
+
+<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+<command:details><command:name>Write-CmLogFile</command:name>
+<command:verb>Write</command:verb>
+<command:noun>CmLogFile</command:noun>
+<maml:description><maml:para>Write CMTrace formated messages to the log file
+</maml:para>
+</maml:description>
+</command:details>
+<maml:description><maml:para>Appends a new line to the log file with the message provided in the parameters and formats the log entry in CMTrace readable format
+</maml:para>
+</maml:description>
+<command:syntax><command:syntaxItem><maml:name>Write-CmLogFile</maml:name>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>LogFile</maml:name>
+<maml:Description><maml:para>Mandatory.  Specifies the path to the log file that will be updated.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="2" aliases="none"><maml:name>Message</maml:name>
+<maml:Description><maml:para>Mandatory.  Specifies the string that will be written to the log file.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>LogLevel</maml:name>
+<maml:Description><maml:para>Optional.  Specifies the severity level of the message, this defaults to Informational if not specified.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>Clobber</maml:name>
+<maml:Description><maml:para>Optional.  Changes the default function to overwrite an existing file instead of appending to it.
+</maml:para>
+</maml:Description>
+<dev:type><maml:name>SwitchParameter</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>False</dev:defaultValue>
+</command:parameter>
+</command:syntaxItem>
+</command:syntax>
+<command:parameters><command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>LogFile</maml:name>
+<maml:Description><maml:para>Mandatory.  Specifies the path to the log file that will be updated.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="2" aliases="none"><maml:name>Message</maml:name>
+<maml:Description><maml:para>Mandatory.  Specifies the string that will be written to the log file.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>LogLevel</maml:name>
+<maml:Description><maml:para>Optional.  Specifies the severity level of the message, this defaults to Informational if not specified.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>Clobber</maml:name>
+<maml:Description><maml:para>Optional.  Changes the default function to overwrite an existing file instead of appending to it.
+</maml:para>
+</maml:Description>
+<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+<dev:type><maml:name>SwitchParameter</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>False</dev:defaultValue>
+</command:parameter>
+</command:parameters>
+<command:inputTypes></command:inputTypes>
+<command:returnValues></command:returnValues>
+<maml:alertSet><maml:alert><maml:para>Author: Trent Willingham Check out my other scripts and projects @ https://github.com/twillin912
+</maml:para>
+<maml:para>Change Log v1.00   2016-08-09   Initial Release
+</maml:para>
+<maml:para>Requires -Version 3.0
+</maml:para>
+</maml:alert>
+</maml:alertSet>
+<command:examples><command:example><maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+<dev:code>Write-CmLogFile -LogFile 'C:\Logs\MyLog.log' -Message "This is an informational message"</dev:code>
+<dev:remarks><maml:para>Writes a informational message to a new line in the log file 'C:\Logs\MyLog.log'.
+</maml:para>
+</dev:remarks>
+</command:example>
+<command:example><maml:title>-------------------------- EXAMPLE 2 --------------------------</maml:title>
+<dev:code>Write-CmLogFile -LogFile $LogFile -Message "This is an error message" -LogLevel Error</dev:code>
+<dev:remarks><maml:para>Writes an error message to a new line in the log file specified in the $LogFile variable.
+</maml:para>
+</dev:remarks>
+</command:example>
+<command:example><maml:title>-------------------------- EXAMPLE 3 --------------------------</maml:title>
+<dev:code>Write-CmLogFile -LogFile $LogFile -Message "This is an error message" -LogLevel Error -Clobber</dev:code>
+<dev:remarks><maml:para>Writes an error message to a new file, overwritting any existing file specified in the $LogFile variable.
+</maml:para>
+</dev:remarks>
+</command:example>
+</command:examples>
+<command:relatedLinks><maml:navigationLink><maml:linkText>https://github.com/twillin912/PowerShellScripts</maml:linkText>
+<maml:uri>https://github.com/twillin912/PowerShellScripts</maml:uri>
+</maml:navigationLink>
+</command:relatedLinks>
+</command:command>
+</helpItems>
