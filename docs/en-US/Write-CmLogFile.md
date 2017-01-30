@@ -1,6 +1,6 @@
 ---
 external help file: CMLogger-help.xml
-online version: https://github.com/twillin912/PowerShellScripts
+online version: https://cmlogger.readthedocs.io/en/latest/en-US/Write-CmLogFile
 schema: 2.0.0
 ---
 
@@ -115,12 +115,7 @@ Accept wildcard characters: False
 Author: Trent Willingham
 Check out my other scripts and projects @ https://github.com/twillin912
 
-Change Log
-v1.00   2016-08-09   Initial Release
-
-Requires -Version 3.0
-
 ## RELATED LINKS
 
-[https://github.com/twillin912/PowerShellScripts](https://github.com/twillin912/PowerShellScripts)
+[https://cmlogger.readthedocs.io/en/latest/en-US/Write-CmLogFile](https://cmlogger.readthedocs.io/en/latest/en-US/Write-CmLogFile)
 

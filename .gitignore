@@ -4,12 +4,9 @@
 !.vscode/tasks.json
 !.vscode/launch.json
 
-# Windows image file caches
-Thumbs.db
-ehthumbs.db
-
 # Folder config file
 Desktop.ini
 
-# Build file
-[Rr]obocopy.log
+# Release and Temp output dir.
+[Rr]elease/
+[Tt]emp/

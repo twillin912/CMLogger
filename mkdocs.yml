@@ -1,0 +1,5 @@
+site_name: CMLogger Documentation
+pages:
+- Home: index.md
+- Functions:
+  - Write-CMLogFile: en-US/Write-CmLogFile.md

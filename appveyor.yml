@@ -1,24 +1,35 @@
+# version format
+version: 0.1.0.{build}
+
+# branches to build
+branches:
+  only:
+    - master
+    - develop
+
+# Allow WMF5 (i.e. PowerShellGallery functionality)
+image: WMF 5
+
 #Publish to PowerShell Gallery with this key
 environment:
   NuGetApiKey:
     secure: 8fzPA9jCuntNmDKjf/RWRvEQuqqsuMNJ7ywZ2hIWnbrETAWc9JtW3PnhEhnRXaIU
 
-# Allow WMF5 (i.e. PowerShellGallery functionality)
-os: WMF 5
-
-install:
-  - ps: Get-PackageProvider -Name NuGet -ForceBootstrap
-  - ps: Install-Module Pester -MinimumVersion '3.4.0' -force
-  - ps: Install-Module Psake, PSDeploy, BuildHelpers, PlatyPS, PSScriptAnalyzer -force
-  - ps: Import-Module Psake, BuildHelpers, PlatyPS, PSDeploy, Pester -force
-
-skip_commits:
-  message: /updated readme.*|update readme.*s/
-
 build: false
 
-#before_test:
-#  - ps: . .\Build.ps1
-
 test_script:
-  - ps: Invoke-psake .\Build.Psake.ps1
+  - ps: .\build.ps1 Publish
+
+deploy:
+- provider: GitHub
+  release: $(APPVEYOR_REPO_TAG_NAME)
+  description: "GitHub Release"
+  auth_token:
+    secure: 3GTTXmNgNrCZkv0w/qp8+Be5+f/ApC3bqm5eqSnFcMmb2Muu7KMInEQDJPiU6pj8
+  artifact: /.*\.zip/
+  draft: false
+  prerelease: false
+  on:
+    branch: master
+    appveyor_repo_tag: true
+
